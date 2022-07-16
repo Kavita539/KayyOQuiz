@@ -1,0 +1,7 @@
+const useTheme = () => {
+
+};
+
+export {
+    useTheme
+};
