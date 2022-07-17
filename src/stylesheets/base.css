@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+}
+
+:root {
+    --xs-space: 0.2rem;
+    --sm-space: 0.5rem;
+    --md-space: 1rem;
+    --lg-space: 1.5rem;
+    --xl-space: 2rem;
+    --xxl-space: 2.5rem;
+    --xxxl-space: 3rem;
+    
+}
