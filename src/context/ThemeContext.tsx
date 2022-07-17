@@ -9,8 +9,7 @@ import {
     ThemeContextType
 } from "../types";
 
-const ThemeContext = createContext({}
-    as ThemeContextTypes);
+const ThemeContext = createContext({} as ThemeContextType);
 
 const ThemeProvider = ({
     children

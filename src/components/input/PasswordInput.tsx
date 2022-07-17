@@ -10,9 +10,9 @@ const PasswordInput = ({
     type,
     label,
     placeholder,
-    mandatory,
+    required,
     defaultValue,
-    errorText,
+    showError,
     helperText,
     disabled,
     name,
@@ -21,20 +21,21 @@ const PasswordInput = ({
     const [showPassword, setShowPassword] = useState(false);
 
     const togglePassword = (e: FormEvent) => {
-      e.preventDefault();
-      setShowPassword(prevState => !prevState);
+        e.preventDefault();
+        setShowPassword(prevState => !prevState);
     };
   
 return(
-<div className="input-grp"> <label className="form-label form-label-mandatory">{label}</label>
+<div className="input-grp">
+<label className={required? "form-label form-label-mandatory": "form-label"}>{label}</label>
     <input className="form-field" type={type || "text" } placeholder={placeholder} defaultValue={defaultValue}
-        required={mandatory} disabled={disabled} onChange={changeHandler} name={name} />
+        required={required} disabled={disabled} onChange={changeHandler} name={name} />
 
     <button onClick={togglePassword} className="password-toggle-button btn outline-btn">
         {showPassword ? <i className="fas fa-eye"></i> : <i className="fas fa-eye-slash"></i>}
     </button>
 
-    <div className="text-danger">{errorText && helperText}</div>
+    <div className="text-danger">{showError && helperText}</div>
 </div>
 );
 };
